@@ -5,12 +5,19 @@ Chipcoin is an X11 PoW/PoS based cryptocurrency.
 
 
 Algo : X11
+
 PoW/PoS
+
 PoW Blocks Amount - 30000
+
 PoS - Hardcoded Rewards
+
 Blocktime - 60 seconds
+
 Swapfunds chipcoin version 1 - 10340000 CHIP
+
 RPCPORT : 9631
+
 P2PPORT : 9632
 
 
