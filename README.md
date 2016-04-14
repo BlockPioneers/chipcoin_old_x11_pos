@@ -59,6 +59,9 @@ Weight to coin control panel
 Staking icon information update
 
 
+
+
+
 v3.0.0.1
 
 Initial Swap Source
