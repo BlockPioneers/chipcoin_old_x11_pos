@@ -27,25 +27,42 @@ Update Overview
 ===========================
 
 v3.1.0.2
+
 New unique theme
+
 Major code clean up
+
 Blockexplorer in wallet
+
 NTP implementation
+
 Stakereport
+
 Multisend
+
 Social/IRC tab
+
 24hr Stakeweight graph
+
 Own estimated stake weight bar
+
 Check/repair gui
+
 Memory fixes
+
 Full width splash screen
+
 Return change function
+
 Weight to coin control panel
+
 Staking icon information update
 
 
 v3.0.0.1
+
 Initial Swap Source
+
 Blocksplitter function
 
 
