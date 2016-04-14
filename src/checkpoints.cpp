@@ -1,4 +1,5 @@
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2016 The Bitcoin developers
+// Copyright (c) 2016 The Chipcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,8 +27,9 @@ namespace Checkpoints
     //
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        (0, uint256("0x00000113d4f108edbe5e3aa42080a0dfb0d79cf2f6629287278e6c0032125bba"))
-                
+        ( 0,      hashGenesisBlock )
+
+        
     ;
 
     // TestNet has no checkpoints

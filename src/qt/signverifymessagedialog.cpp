@@ -24,10 +24,10 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
 
 #if (QT_VERSION >= 0x040700)
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->addressIn_SM->setPlaceholderText(tr("Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)"));
+    ui->addressIn_SM->setPlaceholderText(tr("Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)"));
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
 
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)"));
     ui->signatureIn_VM->setPlaceholderText(tr("Enter Chipcoin signature"));
 #endif
 

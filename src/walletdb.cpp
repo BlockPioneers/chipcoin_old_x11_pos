@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2016 The Bitcoin developers
+// Copyright (c) 2016 The Chipcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -417,6 +418,36 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
         {
             ssValue >> pwallet->nOrderPosNext;
         }
+		else if (strType == "multisend") //presstab HyperStake
+		{
+			unsigned int i;
+			ssKey >> i;
+			std::pair<std::string, int> pMultiSend;
+			ssValue >> pMultiSend;
+			if(CBitcoinAddress(pMultiSend.first).IsValid())
+			{
+				pwallet->vMultiSend.push_back(pMultiSend);
+			}
+		}
+		else if(strType == "msettings")//presstab HyperStake
+		{
+		   std::pair<bool, int> pSettings;
+		   ssValue >> pSettings;
+		   pwallet->fMultiSend = pSettings.first;
+		   pwallet->nLastMultiSendHeight = pSettings.second;
+		}
+		else if(strType == "mdisabled")//presstab HyperStake
+		{
+		   std::string strDisabledAddress;
+		   ssValue >> strDisabledAddress;
+		   pwallet->vDisabledAddresses.push_back(strDisabledAddress);
+		}
+		else if (strType == "mcoinstake")
+ 		{
+ 			/*bool fMultiSendCoinStake;
+ 			ssValue >> fMultiSendCoinStake;
+ 			pwallet->fMultiSendCoinStake = fMultiSendCoinStake;*/
+ 		}
     } catch (...)
     {
         return false;

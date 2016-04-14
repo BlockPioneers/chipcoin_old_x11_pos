@@ -1647,7 +1647,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>automatically selected</source>
+        <source>Automatically Selected</source>
         <translation>Automatisk valgt</translation>
     </message>
     <message>
@@ -1721,7 +1721,7 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+50"/>
-        <source>custom change address</source>
+        <source>Custom Change Address</source>
         <translation>Ændre adresse</translation>
     </message>
     <message>
@@ -1766,8 +1766,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Indtast en Chipcoin-adresse (f.eks CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Indtast en Chipcoin-adresse (f.eks CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1910,8 +1910,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Adressen til at sende betalingen til (f.eks CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>The address to send the payment to  (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Adressen til at sende betalingen til (f.eks CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1940,8 +1940,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Indtast en Chipcoin-adresse (f.eks CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Indtast en Chipcoin-adresse (f.eks CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
 </context>
 <context>
@@ -1964,8 +1964,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Adresse til at underskrive meddelelsen med (f.eks CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>The address to sign the message with (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Adresse til at underskrive meddelelsen med (f.eks CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -2028,8 +2028,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Adressen meddelelse blev underskrevet med (f.eks CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>The address the message was signed with (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Adressen meddelelse blev underskrevet med (f.eks CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -2044,8 +2044,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Indtast en Chipcoin-adresse (f.eks CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Indtast en Chipcoin-adresse (f.eks CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="-2"/>

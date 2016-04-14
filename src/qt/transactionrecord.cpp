@@ -28,10 +28,56 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
     int64_t nCredit = wtx.GetCredit(true);
     int64_t nDebit = wtx.GetDebit();
     int64_t nNet = nCredit - nDebit;
-    uint256 hash = wtx.GetHash(), hashPrev = 0;
+    uint256 hash = wtx.GetHash();
     std::map<std::string, std::string> mapValue = wtx.mapValue;
 
-    if (nNet > 0 || wtx.IsCoinBase() || wtx.IsCoinStake())
+    if (wtx.IsCoinStake())
+    {
+        CTxDestination address;
+		if (!ExtractDestination(wtx.vout[1].scriptPubKey, address))
+			return parts;
+		
+		if(!IsMine(*wallet, address)) //if the address is not yours then it means you have a tx sent to you in someone elses coinstake tx
+		{
+			for(unsigned int i = 0; i < wtx.vout.size(); i++)
+			{
+				if(i == 0)
+					continue; // first tx is blank
+				CTxDestination outAddress;
+				if(ExtractDestination(wtx.vout[i].scriptPubKey, outAddress))
+				{
+					if(IsMine(*wallet, outAddress))
+					{
+						TransactionRecord txrMultiSendRec = TransactionRecord(hash, nTime, TransactionRecord::RecvWithAddress, CBitcoinAddress(outAddress).ToString(), wtx.vout[i].nValue, 0);
+						parts.append(txrMultiSendRec);
+					}
+				}
+			}
+		}
+		else
+		{
+			TransactionRecord txrCoinStake = TransactionRecord(hash, nTime, TransactionRecord::StakeMint, CBitcoinAddress(address).ToString(), -nDebit, wtx.GetValueOut());
+			// Stake generation
+			parts.append(txrCoinStake);
+			
+			//if some of your outputs went to another address we will make them as a sendtoaddress tx
+			for(unsigned int i = 0; i < wtx.vout.size(); i++)
+			{
+				if(i == 0)
+					continue; //first tx is blank
+				CTxDestination outAddress;
+				if(ExtractDestination(wtx.vout[i].scriptPubKey, outAddress))
+				{
+					if(CBitcoinAddress(outAddress).ToString() != CBitcoinAddress(address).ToString())
+					{
+						TransactionRecord txrCoinStakeMultiSend = TransactionRecord(hash, nTime, TransactionRecord::SendToAddress, CBitcoinAddress(outAddress).ToString(), wtx.vout[i].nValue * -1, 0);
+						parts.append(txrCoinStakeMultiSend);
+					}
+				}
+			}
+		}
+    }
+    else if (nNet > 0 || wtx.IsCoinBase())
     {
         //
         // Credit
@@ -58,19 +104,8 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 }
                 if (wtx.IsCoinBase())
                 {
-                    // Generated (proof-of-work)
+                    // Generated
                     sub.type = TransactionRecord::Generated;
-                }
-                if (wtx.IsCoinStake())
-                {
-                    // Generated (proof-of-stake)
-
-                    if (hashPrev == hash)
-                        continue; // last coinstake output
-
-                    sub.type = TransactionRecord::Generated;
-                    sub.credit = nNet > 0 ? nNet : wtx.GetValueOut() - nDebit;
-                    hashPrev = hash;
                 }
 
                 parts.append(sub);

@@ -37,7 +37,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
 
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)"));
+    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)"));
     ui->splitBlockLineEdit->setPlaceholderText(tr("# of Blocks to Make"));
 #endif
 
@@ -51,6 +51,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
     connect(ui->pushButtonCoinControl, SIGNAL(clicked()), this, SLOT(coinControlButtonClicked()));
     connect(ui->checkBoxCoinControlChange, SIGNAL(stateChanged(int)), this, SLOT(coinControlChangeChecked(int)));
     connect(ui->lineEditCoinControlChange, SIGNAL(textEdited(const QString &)), this, SLOT(coinControlChangeEdited(const QString &)));
+	connect(ui->returnChangeCheckBox, SIGNAL(stateChanged(int)), this, SLOT(coinControlReturnChangeChecked(int)));
     connect(ui->splitBlockCheckBox, SIGNAL(stateChanged(int)), this, SLOT(coinControlSplitBlockChecked(int)));
     connect(ui->splitBlockLineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(splitBlockLineEditChanged(const QString &)));
 
@@ -100,7 +101,7 @@ void SendCoinsDialog::setModel(WalletModel *model)
 				QMessageBox::Ok, QMessageBox::Ok); 
 			return; 
 		}
-		if(entry)
+        if(entry)
         {
             entry->setModel(model);
         }
@@ -223,8 +224,6 @@ void SendCoinsDialog::on_sendButton_clicked()
         fNewRecipientAllowed = true;
         return;
     }
-
-//    WalletModel::SendCoinsReturn sendstatus;
 
     if (!model->getOptionsModel() || !model->getOptionsModel()->getCoinControlFeatures())
         sendstatus = model->sendCoins(recipients, nSplitBlock);
@@ -488,6 +487,28 @@ void SendCoinsDialog::coinControlButtonClicked()
     coinControlUpdateLabels();
 }
 
+ // Coin Control: return change
+ // thanks to presstab HyperStake 
+void SendCoinsDialog::coinControlReturnChangeChecked(int state)
+{
+     if(state == Qt::Checked && ui->checkBoxCoinControlChange->checkState() == Qt::Checked)
+	 {
+		ui->returnChangeCheckBox->setCheckState(Qt::Unchecked);
+		QMessageBox::warning(this, tr("Send Coins"),
+			tr("Cannot use custom change address and return change at the same time. Try again."),
+			QMessageBox::Ok, QMessageBox::Ok);
+		return;
+	 }
+	 
+	if (model)
+    {
+        if (state == Qt::Checked)
+            CoinControlDialog::coinControl->fReturnChange = true;
+       else
+            CoinControlDialog::coinControl->fReturnChange = false;
+    }  
+}
+
  // Coin Control: split block check box 
  // thanks to presstab HyperStake 
 void SendCoinsDialog::coinControlSplitBlockChecked(int state) 
@@ -523,9 +544,18 @@ void SendCoinsDialog::splitBlockLineEditChanged(const QString & text)
 	ui->labelBlockSize->setText(QString::number(nSize));
 }
 
-// Coin Control: checkbox custom change address
+// Coin Control: checkbox Custom Change Address
 void SendCoinsDialog::coinControlChangeChecked(int state)
 {
+    if(state == Qt::Checked && ui->returnChangeCheckBox->checkState() == Qt::Checked)
+	{
+		ui->checkBoxCoinControlChange->setCheckState(Qt::Unchecked);
+		QMessageBox::warning(this, tr("Send Coins"),
+			tr("Cannot use custom change address and return change at the same time. Try again."),
+			QMessageBox::Ok, QMessageBox::Ok);
+		return;
+	}
+ 	
     if (model)
     {
         if (state == Qt::Checked)
@@ -538,7 +568,7 @@ void SendCoinsDialog::coinControlChangeChecked(int state)
     ui->labelCoinControlChangeLabel->setEnabled((state == Qt::Checked));
 }
 
-// Coin Control: custom change address changed
+// Coin Control: Custom Change Address changed
 void SendCoinsDialog::coinControlChangeEdited(const QString & text)
 {
     if (model)

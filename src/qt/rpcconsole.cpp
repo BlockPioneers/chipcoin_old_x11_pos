@@ -307,9 +307,9 @@ void RPCConsole::clear()
                 "table { }"
                 "td.time { color: #808080; padding-top: 3px; } "
                 "td.message { font-family: Monospace; font-size: 12px; } "
-                "td.cmd-request { color: #006060; } "
+                "td.cmd-request { color: #272727; } "
                 "td.cmd-error { color: red; } "
-                "b { color: #006060; } "
+                "b { color: #272727; } "
                 );
 
     message(CMD_REPLY, (tr("Welcome to the Chipcoin RPC console.") + "<br>" +
@@ -434,4 +434,10 @@ void RPCConsole::on_showCLOptionsButton_clicked()
 {
     GUIUtil::HelpMessageBox help;
     help.exec();
+}
+
+void RPCConsole::showTab_Debug()
+{
+    ui->tabWidget->setCurrentIndex(1);
+    this->show();
 }

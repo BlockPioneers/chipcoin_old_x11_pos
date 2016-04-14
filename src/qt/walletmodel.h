@@ -97,9 +97,14 @@ public:
     // Wallet backup
     bool backupWallet(const QString &filename);
 	
+	void getStakeWeightFromValue(const int64_t& nTime, const int64_t& nValue, uint64_t& nWeight);
+	
     void setSplitBlock(bool fSplitBlock); 
     bool getSplitBlock();
 
+	void checkWallet(int& nMismatchSpent, qint64& nBalanceInQuestion, int& nOrphansFound);
+	void repairWallet(int& nMismatchSpent, qint64& nBalanceInQuestion, int& nOrphansFound);
+	
     // RAI object for unlocking wallet, returned by requestUnlock()
     class UnlockContext
     {
@@ -130,7 +135,7 @@ public:
     void unlockCoin(COutPoint& output);
     void listLockedCoins(std::vector<COutPoint>& vOutpts);
     bool isMine(const CBitcoinAddress &address);
-	
+
 private:
     CWallet *wallet;
 

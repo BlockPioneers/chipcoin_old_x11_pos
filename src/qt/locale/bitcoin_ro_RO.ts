@@ -1647,7 +1647,7 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>automatically selected</source>
+        <source>Automatically Selected</source>
         <translation>Selectie automatică</translation>
     </message>
     <message>
@@ -1721,7 +1721,7 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+50"/>
-        <source>custom change address</source>
+        <source>Custom Change Address</source>
         <translation>personalizează schimbarea adresei</translation>
     </message>
     <message>
@@ -1766,8 +1766,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Introduceți o adresă Chipcoin(ex:CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Introduceți o adresă Chipcoin(ex:CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1910,8 +1910,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Adresa catre care trimiteti plata(ex. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>The address to send the payment to  (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Adresa catre care trimiteti plata(ex. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1940,8 +1940,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Introduceți o adresă Chipcoin(ex:CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Introduceți o adresă Chipcoin(ex:CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
 </context>
 <context>
@@ -1964,8 +1964,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Adresa cu care semnati mesajul(ex. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>The address to sign the message with (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Adresa cu care semnati mesajul(ex. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -2028,8 +2028,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Adresa cu care a fost semnat mesajul(ex. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>The address the message was signed with (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Adresa cu care a fost semnat mesajul(ex. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -2044,8 +2044,8 @@ Acest lucru înseamnă că o taxă de cel puțin %2 este necesară</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Introduceți o adresă Chipcoin(ex:CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Introduceți o adresă Chipcoin(ex:CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="-2"/>

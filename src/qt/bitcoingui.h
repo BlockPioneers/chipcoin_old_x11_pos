@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QSystemTrayIcon>
 
+#include "blockbrowser.h"
+
 class TransactionTableModel;
 class ClientModel;
 class WalletModel;
@@ -14,6 +16,9 @@ class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
+class BlockBrowser;
+class StakeForCharityDialog;
+class ChatWindow;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -58,6 +63,7 @@ private:
     WalletModel *walletModel;
 
     QStackedWidget *centralWidget;
+	ChatWindow *chatWindow;
 
     OverviewPage *overviewPage;
     QWidget *transactionsPage;
@@ -65,8 +71,14 @@ private:
     AddressBookPage *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
     SignVerifyMessageDialog *signVerifyMessageDialog;
+
     
-    QLabel *labelEncryptionIcon;
+	QLabel *mainIcon;
+	
+	// For another time
+	QLabel *mainIcon2;	
+    
+	QLabel *labelEncryptionIcon;
     QLabel *labelStakingIcon;
     QLabel *labelConnectionsIcon;
     QLabel *labelBlocksIcon;
@@ -93,13 +105,25 @@ private:
     QAction *lockWalletAction;
     QAction *aboutQtAction;
     QAction *openRPCConsoleAction;
+    QAction *blockAction;
+	QAction *stakeReportAction;
+	QAction *charityAction;
+	QAction * chatAction;
+	QAction *checkWalletAction;
+	QAction *repairWalletAction;
     
     QSystemTrayIcon *trayIcon;
     Notificator *notificator;
     TransactionView *transactionView;
     RPCConsole *rpcConsole;
+    BlockBrowser *blockBrowser;
+	StakeForCharityDialog *stakeForCharityDialog;
 
     QMovie *syncIconMovie;
+    QMovie *stakingOnMovie;
+	
+	bool fMultiSend;
+	bool fMultiSendNotify;
 
     /** Create the main UI actions. */
     void createActions();
@@ -109,6 +133,9 @@ private:
     void createToolBars();
     /** Create system tray (notification) icon */
     void createTrayIcon();
+	
+    void updateStyle();
+    void writeDefaultStyleSheet(const QString &qssPath);
 
 public slots:
     /** Set number of connections shown in the UI */
@@ -145,12 +172,16 @@ private slots:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage();
-    
+    /** Show block explorer page */
+    void gotoBlockBrowser(QString transactionId = "");
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
 
+    /** Switch to IRC page */
+     void gotoChatPage();
+	
     /** Show configuration dialog */
     void optionsClicked();
     /** Show about dialog */
@@ -174,6 +205,15 @@ private slots:
     void unlockWallet();
 
     void lockWallet();
+	
+	/** Open stake report dialog */
+    void stakeReportClicked();
+	
+	/** Check the wallet */
+	void checkWallet();
+	/** Repair the wallet */
+	void repairWallet();
+ 
 
     /** Show window if hidden, unminimize when minimized, rise when obscured or show if hidden and fToggleHidden is true */
     void showNormalIfMinimized(bool fToggleHidden = false);
@@ -181,6 +221,8 @@ private slots:
     void toggleHidden();
     
     void updateStakingIcon();
+	//void charityClicked(QString addr = "");
+    void updateStyleSlot();
 };
 
 #endif

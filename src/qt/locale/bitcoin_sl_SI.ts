@@ -1645,7 +1645,7 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>automatically selected</source>
+        <source>Automatically Selected</source>
         <translation>samodejno izbran</translation>
     </message>
     <message>
@@ -1719,7 +1719,7 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location line="+50"/>
-        <source>custom change address</source>
+        <source>Custom Change Address</source>
         <translation>izbira spremembe naslova</translation>
     </message>
     <message>
@@ -1764,8 +1764,8 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Vnesite Chipcoin naslov (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Vnesite Chipcoin naslov (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1908,8 +1908,8 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Naslov kamor želite poslati plačilo (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>The address to send the payment to  (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Naslov kamor želite poslati plačilo (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1938,8 +1938,8 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Vnesite Chipcoin naslov (npr. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Vnesite Chipcoin naslov (npr. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
 </context>
 <context>
@@ -1962,8 +1962,8 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Naslov s katerim želite podpisati sporočilo (npr. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>The address to sign the message with (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Naslov s katerim želite podpisati sporočilo (npr. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -2026,8 +2026,8 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Naslov s katerim je bilo podpisano sporočilo (npr. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>The address the message was signed with (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Naslov s katerim je bilo podpisano sporočilo (npr. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -2042,8 +2042,8 @@ Ta oznaka se obarva rdeče, če je prioriteta manjša kot &quot;srednja&quot;.
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Chipcoin address (e.g. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</source>
-        <translation>Vnesite Chipcoin naslov (npr. CHIP1GhW4LdbeV7na634lk8t7boS1n8kM)</translation>
+        <source>Enter a Chipcoin address (e.g. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</source>
+        <translation>Vnesite Chipcoin naslov (npr. CH1PFFgK3KtzaV9ce467nq5m5Vis1E4hZ)</translation>
     </message>
     <message>
         <location line="-2"/>

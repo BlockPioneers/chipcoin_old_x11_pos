@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>593</width>
+    <height>349</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -92,10 +92,10 @@
        </property>
        <property name="text">
         <string>
-Copyright © 2009-2016 The Bitcoin Core Developers&lt;br/&gt;
-Copyright © 2012-2016 The Novacoin Core Developers&lt;br/&gt;
-Copyright © 2015-2016 The Chipcoin Core Developers&lt;br/&gt;&lt;br/&gt;
-Website: &lt;a href=&quot;http://chipcoin.info&quot;&gt;http://chipcoin.info&lt;/a&gt;
+Copyright © 2009-2015 The Bitcoin developers&lt;br/&gt;
+Copyright © 2012-2016 The NovaCoin developers&lt;br/&gt;
+Copyright © 2015-2016 The Chipcoin developers&lt;br/&gt;&lt;br/&gt;
+Website: &lt;a href=&quot;http://www.chipcoin.info&quot;&gt;http://www.chipcoin.info&lt;/a&gt;
        </string>
        </property>
        <property name="textFormat">

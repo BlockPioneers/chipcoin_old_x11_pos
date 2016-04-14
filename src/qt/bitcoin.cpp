@@ -11,13 +11,13 @@
 #include "init.h"
 #include "ui_interface.h"
 #include "qtipcserver.h"
+#include "splashscreen.h"
 
 #include <QApplication>
 #include <QMessageBox>
 #include <QTextCodec>
 #include <QLocale>
 #include <QTranslator>
-#include <QSplashScreen>
 #include <QLibraryInfo>
 
 #if defined(BITCOIN_NEED_QT_PLUGINS) && !defined(_BITCOIN_QT_PLUGINS_INCLUDED)
@@ -33,7 +33,7 @@ Q_IMPORT_PLUGIN(qtaccessiblewidgets)
 
 // Need a global reference for the notifications to find the GUI
 static BitcoinGUI *guiref;
-static QSplashScreen *splashref;
+static SplashScreen *splashref;
 
 static void ThreadSafeMessageBox(const std::string& message, const std::string& caption, int style)
 {
@@ -83,9 +83,10 @@ static void InitMessage(const std::string &message)
 {
     if(splashref)
     {
-        splashref->showMessage(QString::fromStdString(message), Qt::AlignBottom|Qt::AlignHCenter, QColor(232,186,63));
-        QApplication::instance()->processEvents();
+        splashref->label->setText(QString::fromStdString(message));//showMessage(QString::fromStdString(message), Qt::AlignBottom|Qt::AlignHCenter, QColor(55,55,55));
+        qApp->processEvents();
     }
+    printf("init message: %s\n", message.c_str());
 }
 
 static void QueueShutdown()
@@ -198,10 +199,13 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    QSplashScreen splash(QPixmap(":/images/splash"), 0);
+    SplashScreen splash;
+
     if (GetBoolArg("-splash", true) && !GetBoolArg("-min"))
     {
         splash.show();
+        splash.setAutoFillBackground(true);
+
         splashref = &splash;
     }
 
@@ -224,7 +228,7 @@ int main(int argc, char *argv[])
                 // calling Shutdown().
 
                 if (splashref)
-                    splash.finish(&window);
+                    splash.close();
 
                 ClientModel clientModel(&optionsModel);
                 WalletModel walletModel(pwalletMain, &optionsModel);

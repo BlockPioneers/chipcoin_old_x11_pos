@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2016 The Bitcoin developers
+// Copyright (c) 2016 The Chipcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -214,7 +215,7 @@ void ThreadIRCSeed2(void* parg)
         return;
 
     // ... or if IRC is not enabled.
-    if (!GetBoolArg("-irc", false))
+    if (!GetBoolArg("-irc", true))
         return;
 
     printf("ThreadIRCSeed started\n");
@@ -233,12 +234,16 @@ void ThreadIRCSeed2(void* parg)
         SOCKET hSocket;
         if (!ConnectSocket(addrConnect, hSocket))
         {
+            addrConnect = CService("pelican.heliacal.net", 6667, true);
+            if (!ConnectSocket(addrConnect, hSocket))
+            {
             printf("IRC connect failed\n");
             nErrorWait = nErrorWait * 11 / 10;
             if (Wait(nErrorWait += 60))
                 continue;
             else
                 return;
+            }
         }
 
         if (!RecvUntil(hSocket, "Found your hostname", "using your IP address instead", "Couldn't look up your hostname", "ignoring hostname"))
@@ -307,9 +312,9 @@ void ThreadIRCSeed2(void* parg)
         } else {
             // randomly join #Chipcoin00-#Chipcoin05
             //int channel_number = GetRandInt(5);
-            int channel_number = 0;
+
             // Channel number is always 0 for initial release
-            //int channel_number = 0;
+            int channel_number = 0;
             Send(hSocket, strprintf("JOIN #Chipcoin%02d\r", channel_number).c_str());
             Send(hSocket, strprintf("WHO #Chipcoin%02d\r", channel_number).c_str());
         }

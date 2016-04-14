@@ -64,6 +64,7 @@ private slots:
     void coinControlClipboardPriority();
     void coinControlClipboardLowOutput();
     void coinControlClipboardChange();
+	void coinControlReturnChangeChecked(int);
     void coinControlSplitBlockChecked(int);
     void splitBlockLineEditChanged(const QString & text);
 };
