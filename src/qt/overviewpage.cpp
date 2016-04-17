@@ -135,7 +135,7 @@ OverviewPage::OverviewPage(QWidget *parent) :
         ui->diffplot->addGraph();
 
         // give the axes some labels:
-        ui->diffplot->xAxis->setLabel("Block Height                               "); //added spacing to "center" txt on overviewpage
+        ui->diffplot->xAxis->setLabel("Block Height");
         ui->diffplot->yAxis->setLabel("24H Network Weight");
 
         // set the pens
