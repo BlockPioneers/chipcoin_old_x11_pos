@@ -725,13 +725,13 @@ void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
     }
 }
 
-double GetStrength(uint64_t nWeight)
-{
-    double networkWeight = GetPoSKernelPS();
-    if (nWeight == 0 && networkWeight == 0)
-        return 0;
-    return nWeight / (static_cast<double>(nWeight) + networkWeight);
-}
+//double GetStrength(uint64_t nWeight)
+//{
+//    double networkWeight = GetPoSKernelPS();
+//    if (nWeight == 0 && networkWeight == 0)
+//        return 0;
+//    return nWeight / (static_cast<double>(nWeight) + networkWeight);
+//}
 
 void BitcoinGUI::updateStakingIcon()
 {
@@ -804,7 +804,7 @@ void BitcoinGUI::updateStakingIcon()
         labelStakingIcon->setPixmap(QIcon(":/icons/staking_off").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
     }
 	
-	overviewPage->setStrength(GetStrength(nWeight));
+	//overviewPage->setStrength(GetStrength(nWeight));
 
 }
 

@@ -503,8 +503,8 @@
          </layout>
         </widget>
        </item>
-   
-   <item>
+	   
+  <!-- <item>
     <widget class="QFrame" name="frame_3_2">
      <property name="lineWidth">
       <number>0</number>
@@ -553,9 +553,8 @@ QProgressBar {
       </item>
      </layout>
     </widget>
-   </item>
-
-    
+   </item>	   -->
+	   
   </layout>
  </widget>
  

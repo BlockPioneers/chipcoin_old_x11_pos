@@ -258,6 +258,7 @@ void OverviewPage::setBalance(qint64 balance, qint64 stake, qint64 unconfirmedBa
     ui->labelImmatureText->setVisible(showImmature);
 }
 
+/*
 void OverviewPage::setStrength(double strength)
 {
     QString strFormat;
@@ -444,6 +445,7 @@ void OverviewPage::setStrength(double strength)
     ui->strengthBar->setFormat(strFormat);
     ui->strengthBar->setTextVisible(true);
 }
+*/
 
 void OverviewPage::setNumTransactions(int count)
 {
