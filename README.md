@@ -44,8 +44,6 @@ Social/IRC tab
 
 24hr Stakeweight graph
 
-Own estimated stake weight bar
-
 Check/repair gui
 
 Memory fixes
