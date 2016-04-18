@@ -85,7 +85,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 	stakeForCharityDialog(0)
 {
     updateStyle();
-    resize(1200, 856);
+    resize(1000, 740);
     setWindowTitle(tr("Chipcoin") + " - " + tr("Wallet"));
 #ifndef Q_OS_MAC
     qApp->setWindowIcon(QIcon(":icons/bitcoin"));
