@@ -102,8 +102,8 @@ public:
     void setSplitBlock(bool fSplitBlock); 
     bool getSplitBlock();
 
-	void checkWallet(int& nMismatchSpent, qint64& nBalanceInQuestion, int& nOrphansFound);
-	void repairWallet(int& nMismatchSpent, qint64& nBalanceInQuestion, int& nOrphansFound);
+	void checkWallet(int& nMismatchSpent, int64_t& nBalanceInQuestion, int& nOrphansFound);
+	void repairWallet(int& nMismatchSpent, int64_t& nBalanceInQuestion, int& nOrphansFound);
 	
     // RAI object for unlocking wallet, returned by requestUnlock()
     class UnlockContext
