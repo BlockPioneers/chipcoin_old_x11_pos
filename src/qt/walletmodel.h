@@ -96,7 +96,8 @@ public:
     bool changePassphrase(const SecureString &oldPass, const SecureString &newPass);
     // Wallet backup
     bool backupWallet(const QString &filename);
-		void getStakeWeightFromValue(const int64_t& nTime, const int64_t& nValue, uint64_t& nWeight);
+    
+	void getStakeWeightFromValue(const int64_t& nTime, const int64_t& nValue, uint64_t& nWeight);
 	
     void setSplitBlock(bool fSplitBlock); 
     bool getSplitBlock();
